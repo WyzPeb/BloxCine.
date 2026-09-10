@@ -17,3 +17,27 @@ hr {
     border: none;
 
 } 
+.grade-filmes {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+  background-color: #111;
+}
+
+.filme.destaque {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.filme {
+  grid-column: span 1;
+}
+
+.filme img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
