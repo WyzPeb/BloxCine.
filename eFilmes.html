@@ -14,6 +14,32 @@
       <div class="ML1">
         <p class="ML">Minha Lista</p>
       </div>
+      <div class="ML1">
+        <p class="ML">Filmes</p>
+      </div>
+      <div class="ML1">
+        <p class="ML">Séries</p>
+      </div>
+      <div class="ML1">
+        <p class="ML">inicio</p>
+      </div>
+      <button id="abrir-formulario" type="button">+</button>
+
+      <form id="form-filme" hidden>
+        <p>
+            <label for="titulo">Título:</label>
+            <input id="titulo" name="titulo" required>
+        </p>
+        <p>
+            <label for="capa">URL da capa:</label>
+            <input id="capa" name="capa" type="url" required>
+        </p>
+        <button type="submit">Adicionar filme</button>
+      </form>
+
+      <div id="filmes"></div>
+
+      <script src="app.js"></script>
     </nav>
 
     <hr />
