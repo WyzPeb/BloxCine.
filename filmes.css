@@ -266,7 +266,155 @@ hr {
   }
 }
 
-/*botao do mais*/
 img {
     width: 150px;
+}
+
+#form-filme[hidden] { display: none; }
+
+#form-filme {
+  --bx-destaque: #e50914;
+  --bx-fundo: #181818;
+  --bx-texto: #ffffff;
+  --bx-estrela-on: #ffc107;
+  --bx-estrela-off: #555555;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(92vw, 480px);
+  max-height: 90vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 24px;
+  background: var(--bx-fundo);
+  color: var(--bx-texto);
+  border-radius: 12px;
+  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.7), 0 10px 40px rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+}
+
+#form-filme label,
+#form-filme #rotulo-avaliacao {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+#form-filme input,
+#form-filme textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background: #2a2a2a;
+  color: #fff;
+  font: inherit;
+}
+
+#form-filme textarea { resize: vertical; min-height: 90px; }
+#form-filme input:focus,
+#form-filme textarea:focus { outline: 2px solid var(--bx-destaque); }
+#form-filme [aria-invalid="true"] { border-color: #ff5252; }
+
+.erro-campo {
+  display: block;
+  margin-top: 4px;
+  color: #ff6b6b;
+  font-size: 0.85rem;
+}
+
+.avaliacao-estrelas { display: flex; gap: 4px; }
+
+.estrela-btn {
+  background: none;
+  border: none;
+  padding: 0 2px;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--bx-estrela-off);
+  transition: transform 0.15s, color 0.15s;
+}
+.estrela-btn.ativa { color: var(--bx-estrela-on); }
+.estrela-btn:hover { transform: scale(1.15); }
+.estrela-btn:focus-visible { outline: 2px solid #fff; border-radius: 4px; }
+
+#form-filme button[type="submit"],
+#form-filme .btn-cancelar {
+  margin-top: 12px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+}
+#form-filme button[type="submit"] { background: var(--bx-destaque); }
+#form-filme .btn-cancelar { background: #444; margin-left: 8px; }
+
+.filme-novo { cursor: pointer; }
+
+.filme-novo .estrela-cheia { color: #ffc107; }
+.filme-novo .estrela-vazia { color: #555555; }
+
+#abrir-formulario {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  box-shadow: 0px 0px 0px 4px rgba(229, 9, 20, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  font-size: 0; 
+  font-weight: 600;
+  transition-duration: 0.3s;
+}
+
+
+#abrir-formulario::after {
+  content: "+";
+  color: white;
+  font-size: 28px;
+  line-height: 1;
+  transition-duration: 0.3s;
+}
+
+#abrir-formulario::before {
+  position: absolute;
+  bottom: -20px;
+  content: "Adicionar filme";
+  color: white;
+  font-size: 0px;
+  white-space: nowrap;
+}
+
+#abrir-formulario:hover,
+#abrir-formulario:focus-visible {
+  width: 160px;
+  border-radius: 50px;
+  background-color: #e50914;
+  transition-duration: 0.3s;
+}
+
+#abrir-formulario:hover::after,
+#abrir-formulario:focus-visible::after {
+  transform: translateY(-200%);
+}
+
+#abrir-formulario:hover::before,
+#abrir-formulario:focus-visible::before {
+  font-size: 14px;
+  opacity: 1;
+  bottom: unset;
+  transition-duration: 0.3s;
 }

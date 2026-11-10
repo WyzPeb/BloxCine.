@@ -34,6 +34,28 @@
             <label for="capa">URL da capa:</label>
             <input id="capa" name="capa" type="url" required>
         </p>
+                <p>
+            <label for="alt-capa">ALT da imagem:</label>
+            <input id="alt-capa" name="alt" placeholder="Descreva a imagem do pôster">
+        </p>
+        <p>
+            <label for="link-assistir">Link de onde assistir:</label>
+            <input id="link-assistir" name="assistir" type="url" placeholder="https://...">
+        </p>
+        <p>
+            <label for="sinopse-filme">Sinopse:</label>
+            <textarea id="sinopse-filme" name="sinopse" rows="4"></textarea>
+        </p>
+        <div class="campo-avaliacao">
+            <span id="rotulo-avaliacao">Avaliação:</span>
+            <div class="avaliacao-estrelas" id="avaliacao-estrelas" role="group" aria-labelledby="rotulo-avaliacao">
+                <button type="button" class="estrela-btn" data-valor="1" aria-label="1 estrela">★</button>
+                <button type="button" class="estrela-btn" data-valor="2" aria-label="2 estrelas">★</button>
+                <button type="button" class="estrela-btn" data-valor="3" aria-label="3 estrelas">★</button>
+                <button type="button" class="estrela-btn" data-valor="4" aria-label="4 estrelas">★</button>
+                <button type="button" class="estrela-btn" data-valor="5" aria-label="5 estrelas">★</button>
+            </div>
+        </div>
         <button type="submit">Adicionar filme</button>
       </form>
 
